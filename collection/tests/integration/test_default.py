@@ -6,6 +6,7 @@ is permitted, for more information consult the project license file.
 """
 
 
+
 from os import environ
 from pathlib import Path
 from sys import executable
