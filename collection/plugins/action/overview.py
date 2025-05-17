@@ -48,14 +48,14 @@ class ActionModule(ActionBase):  # type: ignore
         :returns: Returned following parent super instantiation.
         """
 
-        params = self._task.args
+        args = self._task.args
 
         assert task_vars is not None
 
         display = Display()
 
         dumped = array_ansi(
-            params['input'],
+            args['input'],
             indent=2)
 
         dashes = '─' * 60
