@@ -20,8 +20,15 @@ from encommon.utils import make_ansi
 
 PARAMETERS: DictStrAny = {
     'input': {
-        'type': 'dict',
-        'required': True}}
+        'type': 'list',
+        'required': False},
+    'prefix': {
+        'type': 'list',
+        'required': False}}
+
+
+
+PREFIX = Optional[tuple[str, ...]]
 
 
 
@@ -52,11 +59,29 @@ class ActionModule(ActionBase):  # type: ignore
 
         assert task_vars is not None
 
+        prefix: PREFIX = (
+            tuple(str(x) for x in
+                  args['prefix'])
+            if args.get('prefix')
+            else None)
+
+        input = args.get('input')
+
+        assert prefix or input
+
+
+        source = (
+            {k: v for k, v in
+             task_vars.items()
+             if k.startswith(prefix)}
+            if not input and prefix
+            else input)
+
+
         display = Display()
 
         dumped = array_ansi(
-            args['input'],
-            indent=2)
+            source, indent=2)
 
         dashes = '─' * 60
 
@@ -72,6 +97,7 @@ class ActionModule(ActionBase):  # type: ignore
         display.display(
             msg=output,
             screen_only=True)
+
 
         result = super().run(
             tmp, task_vars)

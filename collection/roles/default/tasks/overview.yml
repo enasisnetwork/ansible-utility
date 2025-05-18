@@ -17,11 +17,9 @@
         host: '{{ ansible_host | default }}'
         user: '{{ ansible_user | default }}'
         groups: '{{ group_names }}'
-      orche: >-
-        {%- if orche | default -%}
-        {%-   set system = orche_system -%}
-        {{-   {'name': system.name,
-               'domain': system.params.domain} -}}
-        {%- endif -%}
+      orche_system: >-
+        {{- orche_system
+            if orche_system | default
+            else omit -}}
 
   tags: always
