@@ -8,7 +8,7 @@
 .PHONY: utility-overview
 utility-overview: \
 	.check-stage .check-limit
-	@## Dump information related to operation
+	@## Information about the inventory host
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-overview<c0>)
@@ -33,7 +33,7 @@ utility-overview: \
 .PHONY: utility-validate
 utility-validate: \
 	.check-stage .check-limit
-	@## Login to the host and report reachable
+	@## Validate inventory host is reachable
 	@#
 	$(call MAKE_PR2NT,\
 		<cD>make <cL>utility-validate<c0>)

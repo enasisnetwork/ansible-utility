@@ -2,7 +2,7 @@
 
 > This project has not released its first major version.
 
-Ansible content used within other Enasis Network collections.
+Ansible content used within other Enasis Network Ansible collections.
 
 Check out the repository on
 [GitHub](https://github.com/enasisnetwork/ansible-utility)
