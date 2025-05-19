@@ -1,0 +1,30 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+DOCUMENTATION:
+  name: basename
+  short_description: Resolve basename of filesystem path.
+  version_added: '0.2.0'
+  description:
+    - Returns the file name and parents from a filesystem path.
+    - Allows for returning specific amount of parent directories.
+  author:
+    - Robert Harris
+    - Enasis Network
+  options:
+    _input:
+      description:
+        - Complete or relative filesystem path.
+      type: str
+      required: true
+    parents:
+      description:
+        - How many parent directories to include.
+        - If not specified, works same as `community.general`.
+      type: int
+      default: 0

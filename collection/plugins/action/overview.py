@@ -8,17 +8,17 @@ is permitted, for more information consult the project license file.
 
 
 from typing import Optional
+from typing import TYPE_CHECKING
 
 from ansible.plugins.action import ActionBase  # type: ignore
 from ansible.utils.display import Display  # type: ignore
 
-from encommon.types import DictStrAny
-from encommon.utils import array_ansi
-from encommon.utils import make_ansi
+if TYPE_CHECKING:
+    from encommon.types import DictStrAny
 
 
 
-PARAMETERS: DictStrAny = {
+_PARAMETERS: 'DictStrAny' = {
     'input': {
         'type': 'list',
         'required': False},
@@ -28,7 +28,7 @@ PARAMETERS: DictStrAny = {
 
 
 
-PREFIX = Optional[tuple[str, ...]]
+_PREFIX = Optional[tuple[str, ...]]
 
 
 
@@ -37,7 +37,7 @@ class ActionModule(ActionBase):  # type: ignore
     Perform whatever operation is associated with the file.
     """
 
-    argument_spec = PARAMETERS
+    argument_spec = _PARAMETERS
     supports_check_mode = True
 
 
@@ -45,8 +45,8 @@ class ActionModule(ActionBase):  # type: ignore
         # NOCVR
         self,
         tmp: Optional[str] = None,
-        task_vars: Optional[DictStrAny] = None,
-    ) -> DictStrAny:
+        task_vars: Optional['DictStrAny'] = None,
+    ) -> 'DictStrAny':
         """
         Perform whatever operation is associated with the file.
 
@@ -55,11 +55,14 @@ class ActionModule(ActionBase):  # type: ignore
         :returns: Returned following parent super instantiation.
         """
 
+        from encommon.utils import array_ansi
+        from encommon.utils import make_ansi
+
         args = self._task.args
 
         assert task_vars is not None
 
-        prefix: PREFIX = (
+        prefix: _PREFIX = (
             tuple(str(x) for x in
                   args['prefix'])
             if args.get('prefix')

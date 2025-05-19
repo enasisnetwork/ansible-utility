@@ -9,7 +9,7 @@
 
 
 
-- name: Validate inventory hosts is reachable
+- name: Validate inventory host is reachable
 
   ansible.builtin.ping:
 
