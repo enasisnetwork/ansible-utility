@@ -2,7 +2,7 @@
 
 > This project has not released its first major version.
 
-Project for executing the Ansible playbooks for system automation.
+Ansible content used within other Enasis Network Ansible collections.
 
 Check out this collection on
 [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)

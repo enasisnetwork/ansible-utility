@@ -13,12 +13,12 @@ Provides host information gathering and connectivity validation.
     - name: Information about the inventory host
       import_role:
         name: enasisnetwork.utility.default
-      tags: [overview]
+      tags: overview
 
     - name: Validate inventory host is reachable
       import_role:
         name: enasisnetwork.utility.default
-      tags: [validate]
+      tags: validate
 ```
 
 # Example from command line
@@ -27,12 +27,5 @@ Provides host information gathering and connectivity validation.
 ansible-playbook \
   ...
   --tags "overview" \
-  enasisnetwork.utility.default
-```
-*Validate inventory host is reachable*
-```
-ansible-playbook \
-  ...
-  --tags "validate" \
   enasisnetwork.utility.default
 ```
