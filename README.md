@@ -1,8 +1,12 @@
 # Enasis Network Ansible Utility Collection
 
-> :warning: This project has not released its first major version.
+> This project has not released its first major version.
 
 Project for executing the Ansible playbooks for system automation.
+
+Check out this collection on
+[Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)
+for more information.
 
 ## Quick start for local development
 Start by cloning the repository to your local machine.

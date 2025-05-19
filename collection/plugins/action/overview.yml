@@ -1,0 +1,28 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+DOCUMENTATION:
+  name: overview
+  short_description: Present information to screen.
+  version_added: '0.2.0'
+  description:
+    - Presents enriched information to controller console.
+  author:
+    - Robert Harris
+    - Enasis Network
+  options:
+    input:
+      description:
+        - Dictionary of information to be presented.
+        - Should not be used with `prefix`.
+      type: dict
+    prefix:
+      description:
+        - Prefixes for matching variable names.
+        - Should not be used with `input`.
+      type: list

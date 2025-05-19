@@ -9,7 +9,7 @@
 
 
 
-- name: Information about the inventory hosts
+- name: Information about the inventory host
 
   enasisnetwork.utility.overview:
     input:

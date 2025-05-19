@@ -8,8 +8,10 @@ is permitted, for more information consult the project license file.
 
 
 from pathlib import Path
+from typing import TYPE_CHECKING
 
-from encommon.parse.jinja2 import FILTERS
+if TYPE_CHECKING:
+    from encommon.parse.jinja2 import FILTERS
 
 
 
@@ -22,7 +24,7 @@ class FilterModule:
     def filters(
         # NOCVR
         self,
-    ) -> FILTERS:
+    ) -> 'FILTERS':
         """
         Return the filter functions for use in Ansible routines.
 
