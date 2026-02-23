@@ -31,3 +31,21 @@
     validate.yml
 
   tags: validate
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    patch.yml
+
+  tags: patch
+
+
+
+- name: Include downstream tasks within roles
+
+  ansible.builtin.include_tasks: >-
+    reboot.yml
+
+  tags: reboot

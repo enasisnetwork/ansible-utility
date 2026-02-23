@@ -9,21 +9,24 @@
 
 
 
-- name: Validate inventory host is reachable
+- name: Update the inventory host applications
 
-  ansible.builtin.ping:
+  ansible.builtin.dnf:
+    name: '*'
+    state: latest
 
   when:
     - inventory_hostname != 'localhost'
-    - provision_family != 'windows'
+    - provision_family == ['almalinux', 'fedora']
 
   tags: always
 
 
 
-- name: Validate inventory host is reachable
+- name: Update the inventory host applications
 
-  ansible.windows.win_ping:
+  ansible.windows.win_updates:
+    reboot: true
 
   when:
     - inventory_hostname != 'localhost'

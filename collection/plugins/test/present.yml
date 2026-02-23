@@ -1,0 +1,24 @@
+---
+# Functions and routines associated with Enasis Network Orchestrations.
+
+# This file is part of Enasis Network software eco-system. Distribution
+# is permitted, for more information consult the project license file.
+
+
+
+DOCUMENTATION:
+  name: present
+  short_description: Determine whether value is present.
+  version_added: '0.3.4'
+  description:
+    - Returns the boolean indicating that the value is present.
+    - This was born from the updates to Ansible in 2.19.
+  author:
+    - Robert Harris
+    - Enasis Network
+  options:
+    _input:
+      description:
+        - Value which will be determined if present.
+      type: any
+      required: true
