@@ -23,7 +23,7 @@ utility-overview: \
 		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
-			--limit="localhost,$(limit)" \
+			--limit="$(limit)" \
 			--tags=overview \
 			enasisnetwork.utility.default; \
 		deactivate)
@@ -48,7 +48,57 @@ utility-validate: \
 		PYTHONPATH=. \
 		ansible-playbook \
 			$(ansible_args) \
-			--limit="localhost,$(limit)" \
+			--limit="$(limit)" \
 			--tags=validate \
+			enasisnetwork.utility.default; \
+		deactivate)
+
+
+
+.PHONY: utility-patch
+utility-patch: \
+	.check-stage .check-limit
+	@## Validate inventory host is reachable
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>utility-patch<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=patch \
+			enasisnetwork.utility.default; \
+		deactivate)
+
+
+
+.PHONY: utility-reboot
+utility-reboot: \
+	.check-stage .check-limit
+	@## Validate inventory host is reachable
+	@#
+	$(call MAKE_PR2NT,\
+		<cD>make <cL>utility-reboot<c0>)
+	@#
+	@( \
+		set -e; \
+		[ -f ./orchestro.env ] \
+			&& set -a \
+			&& . ./orchestro.env \
+			&& set +a || true; \
+		. $(VENVP)/bin/activate; \
+		PYTHONPATH=. \
+		ansible-playbook \
+			$(ansible_args) \
+			--limit="$(limit)" \
+			--tags=reboot \
 			enasisnetwork.utility.default; \
 		deactivate)

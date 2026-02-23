@@ -9,21 +9,28 @@
 
 
 
-- name: Validate inventory host is reachable
+- name: Reboot inventory host operating system
 
-  ansible.builtin.ping:
+  ansible.builtin.reboot:
+    connect_timeout: 30
+    pre_reboot_delay: 0
+    post_reboot_delay: 15
+
+  become: true
 
   when:
     - inventory_hostname != 'localhost'
-    - provision_family != 'windows'
+    - provision_family == ['almalinux', 'fedora']
 
   tags: always
 
 
 
-- name: Validate inventory host is reachable
+- name: Reboot inventory host operating system
 
-  ansible.windows.win_ping:
+  ansible.windows.win_reboot:
+
+  become: false
 
   when:
     - inventory_hostname != 'localhost'
