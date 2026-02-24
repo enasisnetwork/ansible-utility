@@ -1,6 +1,8 @@
 ---
 
-# Does not include PyPi badge
+# Does include the Galaxy badge
+
+# yamllint disable rule:line-length
 
 
 
@@ -235,6 +237,30 @@ jobs:
             --file "../static/badges/coverage.png" \
             --label "Coverage.py" \
             --value "${STATUS}%"
+
+      # Construct additional content
+      - name: Build badge for Galaxy
+        working-directory: main
+        run: |
+
+          PACKAGE="${GITHUB_REPOSITORY##*/}"
+          PACKAGE="${PACKAGE#ansible-}"
+          INFO=$(curl -sL "https://galaxy.ansible.com/api/v3/collections/enasisnetwork/$PACKAGE/")
+
+          VERSION=$( \
+            echo "$INFO" \
+            | jq -r '.highest_version.version // "unknown"')
+
+          RELEASE=$( \
+            echo "$INFO" \
+            | jq -r '.updated_at // "unknown"')
+
+          python makebadge.py \
+            --file "../static/badges/galaxy.png" \
+            --label "Galaxy" \
+            --value "$VERSION" \
+            --color "teal" \
+            --date "$RELEASE"
 
 
       # Save content in static branch

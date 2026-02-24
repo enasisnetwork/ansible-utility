@@ -8,6 +8,7 @@ Check out this collection on
 [Ansible Galaxy](https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility)
 for more information.
 
+<a href="https://galaxy.ansible.com/ui/repo/published/enasisnetwork/utility"><img src="https://enasisnetwork.github.io/ansible-utility/badges/galaxy.png"></a><br>
 <a href="https://enasisnetwork.github.io/ansible-utility/validate/flake8.txt"><img src="https://enasisnetwork.github.io/ansible-utility/badges/flake8.png"></a><br>
 <a href="https://enasisnetwork.github.io/ansible-utility/validate/pylint.txt"><img src="https://enasisnetwork.github.io/ansible-utility/badges/pylint.png"></a><br>
 <a href="https://enasisnetwork.github.io/ansible-utility/validate/ruff.txt"><img src="https://enasisnetwork.github.io/ansible-utility/badges/ruff.png"></a><br>
