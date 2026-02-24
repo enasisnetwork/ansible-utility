@@ -3,7 +3,7 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=2368257052
+Using --randomly-seed=3769663404
 ansible: 2.20.3
 rootdir: /home/runner/work/ansible-utility/ansible-utility/main
 configfile: setup.cfg
@@ -13,12 +13,12 @@ created: 4/4 workers
 
 scheduling tests via LoadScheduling
 
-collection/tests/integration/test_default.py::test_default[collection-overview] 
-collection/tests/unit/test_basename.py::test_basename 
 collection/tests/unit/test_basename.py::test_basename_raises 
-[gw1] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename 
-[gw0] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
-[gw2] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
+collection/tests/unit/test_basename.py::test_basename 
+collection/tests/integration/test_default.py::test_default[collection-overview] 
+[gw2] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename 
+[gw1] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
+[gw0] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.12.12-final-0 _______________
@@ -42,7 +42,7 @@ collection/tests/unit/__init__.py                  0      0   100%
 collection/tests/unit/test_basename.py            20      0   100%
 ------------------------------------------------------------------
 TOTAL                                             86     14    84%
-============================== 3 passed in 39.02s ==============================
+============================== 3 passed in 41.80s ==============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
