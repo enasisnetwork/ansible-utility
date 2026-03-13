@@ -1,9 +1,9 @@
 >>> make pytest
   ● Executing pytest in collection..
 ============================= test session starts ==============================
-platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
+platform linux -- Python 3.12.13, pytest-9.0.2, pluggy-1.6.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=2894534792
+Using --randomly-seed=2942331627
 ansible: 2.20.3
 rootdir: /home/runner/work/ansible-utility/ansible-utility/main
 configfile: setup.cfg
@@ -16,12 +16,12 @@ scheduling tests via LoadScheduling
 collection/tests/unit/test_basename.py::test_basename_raises 
 collection/tests/unit/test_basename.py::test_basename 
 collection/tests/integration/test_default.py::test_default[collection-overview] 
-[gw2] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename 
-[gw1] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
+[gw1] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename 
+[gw2] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
 [gw0] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
 
 ================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.12.12-final-0 _______________
+_______________ coverage: platform linux, python 3.12.13-final-0 _______________
 
 Name                                           Stmts   Miss  Cover
 ------------------------------------------------------------------
@@ -42,7 +42,7 @@ collection/tests/unit/__init__.py                  0      0   100%
 collection/tests/unit/test_basename.py            20      0   100%
 ------------------------------------------------------------------
 TOTAL                                             86     14    84%
-============================== 3 passed in 41.40s ==============================
+============================== 3 passed in 45.41s ==============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
