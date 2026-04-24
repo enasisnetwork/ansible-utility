@@ -3,21 +3,21 @@
 ============================= test session starts ==============================
 platform linux -- Python 3.12.13, pytest-9.0.3, pluggy-1.6.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=1862930902
-ansible: 2.20.4
+Using --randomly-seed=3406024030
+ansible: 2.20.5
 rootdir: /home/runner/work/ansible-utility/ansible-utility/main
 configfile: setup.cfg
-plugins: cov-7.1.0, mypy-1.0.1, xdist-3.8.0, clarity-1.0.1, randomly-4.0.1, ansible-26.4.0, sphinx-0.7.1
+plugins: randomly-4.1.0, cov-7.1.0, mypy-1.0.1, xdist-3.8.0, clarity-1.0.1, ansible-26.4.0, sphinx-0.7.1
 created: 4/4 workers
 4 workers [3 items]
 
 scheduling tests via LoadScheduling
 
 collection/tests/unit/test_basename.py::test_basename_raises 
-collection/tests/unit/test_basename.py::test_basename 
 collection/tests/integration/test_default.py::test_default[collection-overview] 
-[gw2] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
-[gw1] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename 
+collection/tests/unit/test_basename.py::test_basename 
+[gw1] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
+[gw2] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename 
 [gw0] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
 
 ================================ tests coverage ================================
@@ -42,7 +42,7 @@ collection/tests/unit/__init__.py                  0      0   100%
 collection/tests/unit/test_basename.py            20      0   100%
 ------------------------------------------------------------------
 TOTAL                                             86     14    84%
-============================== 3 passed in 41.70s ==============================
+============================== 3 passed in 40.42s ==============================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
