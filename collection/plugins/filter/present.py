@@ -60,9 +60,9 @@ def present(  # noqa: CFQ004
         return False
 
     if isinstance(value, bool):
-        return value
+        return True
 
     if hasattr(value, '__len__'):
         return len(value) >= 1
 
-    return True
+    return False
