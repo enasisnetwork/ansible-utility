@@ -1,3 +1,11 @@
 >>> make ansblint
   ● Executing ansible-lint on project..
-    DONE
+syntax-check[specific]: A playbook must be a list of plays, got a <class 'ansible.module_utils._internal._datatag._AnsibleTaggedDict'> instead: /home/runner/work/ansible-utility/ansible-utility/main/collection/molecule/overview/require.yml
+molecule/overview/require.yml:5:1
+
+syntax-check[specific]: The role 'enasisnetwork.utility.default' was not found in: /home/runner/work/ansible-utility/ansible-utility/main/collection/playbooks/roles:/home/runner/work/ansible-utility/ansible-utility/main/collection/roles:/home/runner/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles:/home/runner/work/ansible-utility/ansible-utility/main/collection/playbooks
+playbooks/default.yml:23:7
+
+package-latest: Package installs should not use latest.
+roles/default/tasks/patch.yml:12 Task/Handler: Update the inventory host applications
+
