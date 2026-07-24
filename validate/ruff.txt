@@ -1,3 +1,256 @@
 >>> make ruff
   ● Executing ruff in collection..
-    DONE
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/action/overview.py:10:1
+   |
+10 | / from typing import Optional
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from ansible.plugins.action import ActionBase  # type: ignore
+14 | | from ansible.utils.display import Display  # type: ignore
+   | |_________________________________________^
+15 |
+16 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Optional
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Optional
+11 |
+   |
+
+UP045 Use `X | None` for type annotations
+  --> collection/plugins/action/overview.py:31:11
+   |
+31 | _PREFIX = Optional[tuple[str, ...]]
+   |           ^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Convert to `X | None`
+
+UP045 [*] Use `X | None` for type annotations
+  --> collection/plugins/action/overview.py:47:14
+   |
+45 |         # NOCVR
+46 |         self,
+47 |         tmp: Optional[str] = None,
+   |              ^^^^^^^^^^^^^
+48 |         task_vars: Optional['DictStrAny'] = None,
+49 |     ) -> 'DictStrAny':
+   |
+help: Convert to `X | None`
+   |
+46 |         self,
+   -         tmp: Optional[str] = None,
+47 +         tmp: str | None = None,
+48 |         task_vars: Optional['DictStrAny'] = None,
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/action/overview.py:58:9
+   |
+56 |           """
+57 |
+58 | /         from encommon.utils import array_ansi
+59 | |         from encommon.utils import make_ansi
+   | |____________________________________________^
+60 |
+61 |           args = self._task.args
+   |
+help: Organize imports
+   |
+57 |
+   -         from encommon.utils import array_ansi
+   -         from encommon.utils import make_ansi
+58 +         from encommon.utils import array_ansi, make_ansi
+59 |
+   |
+
+TRY002 Create your own exception
+  --> collection/plugins/filter/basename.py:51:15
+   |
+50 |       if not path:
+51 |           raise Exception(
+   |  _______________^
+52 | |             'There was no path'
+53 | |             'given to filter')
+   | |______________________________^
+54 |
+55 |       path = Path(path)
+   |
+
+TRY002 Create your own exception
+  --> collection/plugins/filter/basename.py:65:15
+   |
+64 |       if not parts:
+65 |           raise Exception(
+   |  _______________^
+66 | |             'There is no file'
+67 | |             ' within the path')
+   | |_______________________________^
+68 |
+69 |       count = min(
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/filter/encommon.py:33:9
+   |
+31 |           """
+32 |
+33 | /         from encommon.types import dedup_list
+34 | |         from encommon.types import getate
+   | |_________________________________________^
+35 |
+36 |           return {
+   |
+help: Organize imports
+   |
+32 |
+   -         from encommon.types import dedup_list
+   -         from encommon.types import getate
+33 +         from encommon.types import dedup_list, getate
+34 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/filter/present.py:10:1
+   |
+10 | / from typing import Any
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from jinja2.runtime import Undefined
+   | |____________________________________^
+14 |
+15 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Any
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Any
+11 |
+   |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `ANN401`)
+  --> collection/plugins/filter/present.py:46:18
+   |
+45 | def present(  # noqa: CFQ004
+46 |     value: Any,  # noqa: ANN401
+   |                  ^^^^^^^^^^^^^^
+47 | ) -> bool:
+48 |     """
+   |
+help: Remove unused `noqa` directive
+   |
+45 | def present(  # noqa: CFQ004
+   -     value: Any,  # noqa: ANN401
+46 +     value: Any,
+47 | ) -> bool:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/plugins/test/present.py:10:1
+   |
+10 | / from typing import Any
+11 | | from typing import TYPE_CHECKING
+12 | |
+13 | | from jinja2.runtime import Undefined
+   | |____________________________________^
+14 |
+15 |   if TYPE_CHECKING:
+   |
+help: Organize imports
+   |
+9  |
+   - from typing import Any
+   - from typing import TYPE_CHECKING
+10 + from typing import TYPE_CHECKING, Any
+11 |
+   |
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `ANN401`)
+  --> collection/plugins/test/present.py:46:18
+   |
+45 | def present(  # noqa: CFQ004
+46 |     value: Any,  # noqa: ANN401
+   |                  ^^^^^^^^^^^^^^
+47 | ) -> bool:
+48 |     """
+   |
+help: Remove unused `noqa` directive
+   |
+45 | def present(  # noqa: CFQ004
+   -     value: Any,  # noqa: ANN401
+46 +     value: Any,
+47 | ) -> bool:
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/tests/integration/__init__.py:10:1
+   |
+10 | from pathlib import Path
+   | ^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+help: Organize imports
+   |
+11 |
+   -
+   -
+12 | SAMPLES = (
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/tests/integration/test_default.py:10:1
+   |
+10 | / from os import environ
+11 | | from pathlib import Path
+12 | | from sys import executable
+13 | |
+14 | | from _pytest.capture import CaptureFixture
+15 | |
+16 | | from encommon.utils.stdout import strip_ansi
+17 | |
+18 | | from pytest_ansible.molecule import MoleculeScenario
+19 | |
+20 | | from . import SAMPLES
+   | |_____________________^
+   |
+help: Organize imports
+   |
+14 | from _pytest.capture import CaptureFixture
+   -
+15 | from encommon.utils.stdout import strip_ansi
+   -
+16 | from pytest_ansible.molecule import MoleculeScenario
+17 |
+18 | from . import SAMPLES
+   -
+19 |
+   |
+
+RUF059 Unpacked variable `stderr` is never used
+  --> collection/tests/integration/test_default.py:44:13
+   |
+44 |     stdout, stderr = (
+   |             ^^^^^^
+45 |         capfd.readouterr())
+   |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> collection/tests/unit/test_basename.py:10:1
+   |
+10 | / from pytest import raises
+11 | |
+12 | | from ...plugins.filter.basename import basename
+   | |_______________________________________________^
+   |
+help: Organize imports
+   |
+14 |
+   -
+15 | def test_basename() -> None:
+   |
+
