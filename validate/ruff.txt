@@ -26,7 +26,6 @@ UP045 Use `X | None` for type annotations
    |
 31 | _PREFIX = Optional[tuple[str, ...]]
    |           ^^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Convert to `X | None`
 
 UP045 [*] Use `X | None` for type annotations
@@ -192,7 +191,6 @@ I001 [*] Import block is un-sorted or un-formatted
    |
 10 | from pathlib import Path
    | ^^^^^^^^^^^^^^^^^^^^^^^^
-   |
 help: Organize imports
    |
 11 |
@@ -216,7 +214,6 @@ I001 [*] Import block is un-sorted or un-formatted
 19 | |
 20 | | from . import SAMPLES
    | |_____________________^
-   |
 help: Organize imports
    |
 14 | from _pytest.capture import CaptureFixture
@@ -246,7 +243,6 @@ I001 [*] Import block is un-sorted or un-formatted
 11 | |
 12 | | from ...plugins.filter.basename import basename
    | |_______________________________________________^
-   |
 help: Organize imports
    |
 14 |
