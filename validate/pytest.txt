@@ -1,24 +1,24 @@
 >>> make pytest
   ● Executing pytest in collection..
 ============================= test session starts ==============================
-platform linux -- Python 3.12.15, pytest-9.2.0, pluggy-1.7.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0 -- /home/runner/work/ansible-utility/ansible-utility/main/.venv-package/bin/python3
 cachedir: .pytest_cache
-Using --randomly-seed=212084419
-ansible: 2.21.5
+Using --randomly-seed=4266824086
+ansible: 2.21.6
 rootdir: /home/runner/work/ansible-utility/ansible-utility/main
 configfile: setup.cfg
-plugins: xdist-3.8.0, sphinx-0.7.1, ansible-26.10.0, cov-7.1.0, randomly-5.0.0, clarity-1.0.1, mypy-1.1.0
+plugins: cov-7.1.0, clarity-1.0.1, xdist-3.8.0, sphinx-0.7.1, randomly-5.0.0, ansible-26.11.0, mypy-1.1.0
 created: 4/4 workers
 4 workers [3 items]
 
 scheduling tests via LoadScheduling
 
-collection/tests/unit/test_basename.py::test_basename_raises 
 collection/tests/unit/test_basename.py::test_basename 
 collection/tests/integration/test_default.py::test_default[collection-overview] 
-[gw0] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
-[gw1] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename 
-[gw2] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
+collection/tests/unit/test_basename.py::test_basename_raises 
+[gw2] [ 33%] PASSED collection/tests/unit/test_basename.py::test_basename 
+[gw1] [ 66%] PASSED collection/tests/unit/test_basename.py::test_basename_raises 
+[gw0] [100%] PASSED collection/tests/integration/test_default.py::test_default[collection-overview] 
 
 =============================== warnings summary ===============================
 .venv-package/lib/python3.12/site-packages/pytest_ansible/plugin.py:432
@@ -30,7 +30,7 @@ collection/tests/integration/test_default.py::test_default[collection-overview]
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.12.15-final-0 _______________
+_______________ coverage: platform linux, python 3.12.16-final-0 _______________
 
 Name                                           Stmts   Miss  Cover
 ------------------------------------------------------------------
@@ -51,7 +51,7 @@ collection/tests/unit/__init__.py                  0      0   100%
 collection/tests/unit/test_basename.py            20      0   100%
 ------------------------------------------------------------------
 TOTAL                                             86     14    84%
-======================== 3 passed, 4 warnings in 35.01s ========================
+======================== 3 passed, 4 warnings in 35.80s ========================
     DONE
   ● Write coveragepy output to htmlcov..
     DONE
